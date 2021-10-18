@@ -4,14 +4,14 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: Validate=false
     openshift.io/host.generated: "true"
-# name: kokoji-app-route
-  name: kokoji-app-el-route
+  name: kokoji-app-route
+ # name: kokoji-app-el-route
 spec:
   tls:
     termination: edge
   to:
     kind: Service
-#   name: kokoji-stt-code-app
-    name: el-kokoji-app-eventlister
+    name: kokoji-stt-code-app
+#    name: el-kokoji-app-eventlister
     weight: 100
   wildcardPolicy: None
