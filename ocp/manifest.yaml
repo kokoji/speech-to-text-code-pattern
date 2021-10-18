@@ -1,0 +1,112 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    enzo: "true"
+  labels:
+    app: kokoji-stt-code-app
+    app.kubernetes.io/instance: kokoji-stt-code-app
+    app.kubernetes.io/name: kokoji-stt-code-app
+  name: kokoji-stt-code-app
+  namespace: kokoji-project01
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app.kubernetes.io/instance: kokoji-stt-code-app
+    app.kubernetes.io/name: kokoji-stt-code-app
+  sessionAffinity: None
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    app.openshift.io/vcs-uri: https://github.com/kokoji/speech-to-text-code-pattern.git
+    enzo: "true"
+  labels:
+    app: kokoji-stt-code-app
+    app.kubernetes.io/instance: kokoji-stt-code-app
+    app.kubernetes.io/name: kokoji-stt-code-app
+    app.openshift.io/runtime: js
+  name: kokoji-stt-code-app
+  namespace: kokoji-project01
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: kokoji-stt-code-app
+      app.kubernetes.io/name: kokoji-stt-code-app
+  template:
+    metadata:
+      annotations:
+        enzo: "true"
+      labels:
+        app.kubernetes.io/instance: kokoji-stt-code-app
+        app.kubernetes.io/name: kokoji-stt-code-app
+    spec:
+      containers:
+      - env:
+        - name: INGRESS_HOST
+        - name: PROTOCOLS
+        - name: LOG_LEVEL
+          value: debug
+        envFrom:
+        - configMapRef:
+            name: kokoji-app-config
+          prefix: SPEECH_TO_TEXT_
+        image: quay.io/kokoji/stt-code-app
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 5000
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: kokoji-stt-code-app
+        ports:
+        - containerPort: 5000
+          name: http
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: http
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Validate=false
+    enzo: "true"
+    openshift.io/host.generated: "true"
+  name: kokoji-app-el-route
+  namespace: kokoji-project01
+spec:
+  tls:
+    termination: edge
+  to:
+    kind: Service
+    name: el-kokoji-app-eventlister
+    weight: 100
+  wildcardPolicy: None
