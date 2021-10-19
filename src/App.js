@@ -9,7 +9,7 @@ import Header from './components/Header';
 import ServiceContainer from './components/ServiceContainer';
 import useScript from './hooks/useScript';
 
-const HEADER_TITLE = 'Watson Speech to Text 2';
+const HEADER_TITLE = 'Watson Speech to Text App';
 const HEADER_DESCRIPTION =
   'IBM Watson Speech to Text is a cloud-native API that transforms voice into written text.';
 const HEADER_LINKS = [
