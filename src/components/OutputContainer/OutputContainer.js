@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FormGroup, Tile } from 'carbon-components-react';
 import AudioWave from '../AudioWave';
 import TranscriptBox from '../TranscriptBox';
+import ResultBox from '../ResultBox';
 
 export const OutputContainer = ({
   audioAnalyzer,
@@ -13,9 +14,10 @@ export const OutputContainer = ({
   isTranscribing,
   keywordInfo,
   transcriptArray,
+  resultArray,
 }) => (
   <Tile className="output-container">
-    <h3 className="container-title">Output</h3>
+    <h3 className="container-title">Output!</h3>
     <FormGroup legendText="Audio">
       <AudioWave
         audioWaveContainerRef={audioWaveContainerRef}
@@ -32,6 +34,12 @@ export const OutputContainer = ({
         transcriptArray={transcriptArray}
       />
     </FormGroup>
+    <FormGroup legendText="Result">
+      <ResultBox
+        keywordInfo={keywordInfo}
+        resultArray={resultArray}
+      />
+    </FormGroup>
   </Tile>
 );
 
@@ -44,6 +52,7 @@ OutputContainer.propTypes = {
   isTranscribing: PropTypes.bool,
   keywordInfo: PropTypes.arrayOf(PropTypes.object),
   transcriptArray: PropTypes.arrayOf(PropTypes.object),
+  resultArray: PropTypes.arrayOf(PropTypes.object),
 };
 
 OutputContainer.defaultProps = {
@@ -53,6 +62,7 @@ OutputContainer.defaultProps = {
   isTranscribing: false,
   keywordInfo: [],
   transcriptArray: [],
+  resultArray: [],
 };
 
 export default OutputContainer;

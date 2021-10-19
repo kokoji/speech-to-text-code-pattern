@@ -50,7 +50,7 @@ export const ControlContainer = ({
 
   return (
     <Tile className="control-container">
-      <h3 className="container-title">Input</h3>
+      <h3 className="container-title">Input!</h3>
       <FormGroup legendText="Language model">
         <Dropdown
           id="language-model-dropdown"

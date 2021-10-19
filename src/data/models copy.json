@@ -1,5 +1,95 @@
 [
-
+  // {
+  //   "name": "en-US_BroadbandModel",
+  //   "language": "en-US",
+  //   "url": "https://stream.watsonplatform.net/speech-to-text/api/v1/models/en-US_BroadbandModel",
+  //   "rate": 16000,
+  //   "filename": "en-US_Broadband-sample.wav",
+  //   "keywords": "IBM, admired, AI, transformations, cognitive",
+  //   "supported_features": {
+  //     "custom_language_model": true,
+  //     "speaker_labels": true
+  //   },
+  //   "description": "US English (16khz Broadband)"
+  // },
+  // {
+  //   "name": "en-US_NarrowbandModel",
+  //   "language": "en-US",
+  //   "url": "https://stream.watsonplatform.net/speech-to-text/api/v1/models/en-US_NarrowbandModel",
+  //   "rate": 8000,
+  //   "filename": "en-US_Narrowband-sample.wav",
+  //   "keywords": "course online, four hours, help",
+  //   "supported_features": {
+  //     "custom_language_model": true,
+  //     "speaker_labels": true
+  //   },
+  //   "description": "US English (8khz Narrowband)"
+  // },
+  // {
+  //   "name": "en-US_ShortForm_NarrowbandModel",
+  //   "language": "en-US",
+  //   "url": "https://stream.watsonplatform.net/speech-to-text/api/v1/models/en-US_ShortForm_NarrowbandModel",
+  //   "rate": 8000,
+  //   "filename": "en-US_ShortForm_Narrowband-sample.wav",
+  //   "keywords": "twenty thousand dollars, filled out, car",
+  //   "supported_features": {
+  //     "custom_language_model": true,
+  //     "speaker_labels": true
+  //   },
+  //   "description": "US English Short Form (8khz Narrowband)"
+  // },
+  // {
+  //   "name": "fr-FR_BroadbandModel",
+  //   "language": "fr-FR",
+  //   "url": "https://stream.watsonplatform.net/speech-to-text/api/v1/models/fr-FR_BroadbandModel",
+  //   "rate": 16000,
+  //   "filename": "fr-FR_Broadband-sample.wav",
+  //   "keywords": "durée du travail, loisirs",
+  //   "supported_features": {
+  //     "custom_language_model": true,
+  //     "speaker_labels": false
+  //   },
+  //   "description": "French (16khz Broadband)"
+  // },
+  // {
+  //   "name": "fr-FR_NarrowbandModel",
+  //   "language": "fr-FR",
+  //   "url": "https://stream.watsonplatform.net/speech-to-text/api/v1/models/fr-FR_NarrowbandModel",
+  //   "rate": 8000,
+  //   "filename": "fr-FR_Narrowband-sample.wav",
+  //   "keywords": "durée du travail, loisirs",
+  //   "supported_features": {
+  //     "custom_language_model": true,
+  //     "speaker_labels": true
+  //   },
+  //   "description": "French (8khz Narrowband)"
+  // },
+  // {
+  //   "name": "pt-BR_BroadbandModel",
+  //   "language": "pt-BR",
+  //   "url": "https://stream.watsonplatform.net/speech-to-text/api/v1/models/pt-BR_BroadbandModel",
+  //   "rate": 16000,
+  //   "filename": "pt-BR_Broadband-sample.wav",
+  //   "keywords": "sistema da ibm, setor bancário, qualidade, necessidades dos clientes",
+  //   "supported_features": {
+  //     "custom_language_model": true,
+  //     "speaker_labels": false
+  //   },
+  //   "description": "Brazilian Portuguese (16khz Broadband)"
+  // },
+  // {
+  //   "name": "pt-BR_NarrowbandModel",
+  //   "language": "pt-BR",
+  //   "url": "https://stream.watsonplatform.net/speech-to-text/api/v1/models/pt-BR_NarrowbandModel",
+  //   "rate": 8000,
+  //   "filename": "pt-BR_Narrowband-sample.wav",
+  //   "keywords": "cozinha, inovadoras receitas, criatividade",
+  //   "supported_features": {
+  //     "custom_language_model": true,
+  //     "speaker_labels": false
+  //   },
+  //   "description": "Brazilian Portuguese (8khz Narrowband)"
+  // },
   {
     "name": "ja-JP_BroadbandModel",
     "language": "ja-JP",

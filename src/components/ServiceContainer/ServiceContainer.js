@@ -367,6 +367,7 @@ export const ServiceContainer = () => {
         isTranscribing={state.isTranscribing}
         keywordInfo={state.keywordInfo}
         transcriptArray={state.transcript}
+        resultArray={state.transcript}
       />
     </div>
   );
