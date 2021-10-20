@@ -59,7 +59,7 @@ spec:
         - configMapRef:
             name: kokoji-app-config
           prefix: SPEECH_TO_TEXT_
-        image: quay.io/kokoji/stt-code-app:61d22c1fa88651f61f4a5f7859af846462f802e8
+        image: quay.io/kokoji/stt-code-app:be94519557c60b37e0dd4a9245881da87cb2acea
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
